@@ -1,4 +1,3 @@
-console.log("Script terbaru berhasil dimuat");
 function showRecipe(food) {
 
     let recipe = "";
@@ -143,4 +142,15 @@ function showRecipe(food) {
 
     document.getElementById("recipeText").textContent = recipe;
     document.getElementById("recipeModal").style.display = "block";
+    function closeRecipe() {
+    document.getElementById("recipeModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById("recipeModal");
+
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
 }
