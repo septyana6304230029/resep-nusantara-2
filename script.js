@@ -51,6 +51,15 @@ function showRecipe(food) {
             "Tumis bumbu, masukkan daging dan mi, lalu aduk hingga matang.";
             break;
 
+        case "sempolet":
+            recipe =
+            "🍲 SEMPOLET\n\n" +
+            "Bahan:\n" +
+            "- Siput Sedut\n" +
+            "- Tepung Sagu\n" +
+            "Cara Memasak:\n" +
+            "Campurkan semuanya.";
+            break;
         default:
             recipe = "Resep tidak ditemukan.";
     }
