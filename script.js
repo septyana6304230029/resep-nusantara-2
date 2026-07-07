@@ -143,19 +143,13 @@ function showRecipe(food) {
     document.getElementById("recipeText").textContent = recipe;
     document.getElementById("recipeModal").style.display = "block";
 
-    history.pushState({ modal: true }, "");
 }
 
 function closeRecipe() {
-    const modal = document.getElementById("recipeModal");
-    modal.style.display = "none";
-
-    if (history.state && history.state.modal) {
-        history.back();
-    }
+    document.getElementById("recipeModal").style.display = "none";
 }
 
-window.onclick = function (event) {
+window.onclick = function(event) {
     const modal = document.getElementById("recipeModal");
 
     if (event.target === modal) {
@@ -163,12 +157,8 @@ window.onclick = function (event) {
     }
 };
 
-document.addEventListener("keydown", function (event) {
+document.addEventListener("keydown", function(event) {
     if (event.key === "Escape") {
         closeRecipe();
     }
-});
-
-window.addEventListener("popstate", function () {
-    document.getElementById("recipeModal").style.display = "none";
 });
