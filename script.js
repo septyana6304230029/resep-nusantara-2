@@ -142,15 +142,28 @@ function showRecipe(food) {
 
     document.getElementById("recipeText").textContent = recipe;
     document.getElementById("recipeModal").style.display = "block";
+
+    history.pushState({ modal: true }, "");
 }
-   function closeRecipe() {
+
+function closeRecipe() {
     document.getElementById("recipeModal").style.display = "none";
 }
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     const modal = document.getElementById("recipeModal");
 
     if (event.target === modal) {
-        modal.style.display = "none";
+        closeRecipe();
     }
-}
+};
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        closeRecipe();
+    }
+});
+
+window.addEventListener("popstate", function () {
+    closeRecipe();
+});
