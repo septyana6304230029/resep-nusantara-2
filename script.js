@@ -140,5 +140,6 @@ function showRecipe(food) {
             recipe = "Resep tidak ditemukan.";
     }
 
-    alert(recipe);
+    document.getElementById("recipeText").textContent = recipe;
+    document.getElementById("recipeModal").style.display = "block";
 }
