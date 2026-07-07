@@ -142,7 +142,8 @@ function showRecipe(food) {
 
     document.getElementById("recipeText").textContent = recipe;
     document.getElementById("recipeModal").style.display = "block";
-    function closeRecipe() {
+}
+   function closeRecipe() {
     document.getElementById("recipeModal").style.display = "none";
 }
 
@@ -152,5 +153,4 @@ window.onclick = function(event) {
     if (event.target === modal) {
         modal.style.display = "none";
     }
-}
 }
